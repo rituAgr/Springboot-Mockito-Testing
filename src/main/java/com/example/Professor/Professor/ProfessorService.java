@@ -11,7 +11,6 @@ public class ProfessorService {
     @Autowired
     ProfessorRepository repository;
 
-//    public
 
     public void add(ProfessorRequest professorRequest) {
         ProfessorDAO professor = new ProfessorDAO(
@@ -19,13 +18,20 @@ public class ProfessorService {
                 professorRequest.name,
                 professorRequest.NumberClassesPerCourse,
                 new Date()
-//                Date.from(Instant.EPOCH)
         );
         repository.save(professor);
     }
 
     public ProfessorDAO get(String id) {
         return repository.get(id);
+    }
+
+
+    public void Dummy_method_toTest_Inorder(String id){
+
+        ProfessorDAO professorDAO = repository.get(id);
+        repository.save(professorDAO);
+
     }
 
 }
