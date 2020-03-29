@@ -3,7 +3,7 @@ package com.example.Professor.Professor;
 
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 @Repository
 public class ProfessorRepository {
@@ -12,6 +12,6 @@ public class ProfessorRepository {
     }
 
     public ProfessorDAO get(String id) {
-        return new ProfessorDAO("id", "name", 12, LocalDate.now());
+        return new ProfessorDAO(id, "name", 12, new Date());
     }
 }

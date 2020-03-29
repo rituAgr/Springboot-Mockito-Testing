@@ -3,7 +3,7 @@ package com.example.Professor.Professor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 @Service
 public class ProfessorService {
@@ -11,12 +11,15 @@ public class ProfessorService {
     @Autowired
     ProfessorRepository repository;
 
+//    public
+
     public void add(ProfessorRequest professorRequest) {
         ProfessorDAO professor = new ProfessorDAO(
                 professorRequest.id,
                 professorRequest.name,
                 professorRequest.NumberClassesPerCourse,
-                LocalDate.now()
+                new Date()
+//                Date.from(Instant.EPOCH)
         );
         repository.save(professor);
     }

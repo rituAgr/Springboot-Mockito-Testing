@@ -19,8 +19,8 @@ public class ProfessorController {
         this.professorService=professorService;
     }
 
-    @PostMapping("api/professor")//, consumes = "application/json")
-    public void addProfessor(@Valid @RequestBody ProfessorRequest professorRequest) throws MethodArgumentNotValidException{//}, IncorrectDataFormatException {
+    @PostMapping("api/professor")
+    public void addProfessor(@Valid @RequestBody ProfessorRequest professorRequest){
         professorService.add(professorRequest);
     }
 
